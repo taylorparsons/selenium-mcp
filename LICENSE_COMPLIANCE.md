@@ -41,6 +41,7 @@ There are no declared GPL-only or AGPL-only Rust package licenses in this snapsh
 | [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) | Model downloaded on first use | Model weights are not committed; model card identifies Apache-2.0 | If weights/config/tokenizer assets are bundled, include model license, attribution and license notices for any additional assets |
 | [FFmpeg](https://ffmpeg.org/legal.html) | Separate executable on PATH, local cache or an explicitly selected verified download | No FFmpeg binary is bundled. Rust `ffmpeg-sidecar` is independently MIT | FFmpeg is normally LGPL-2.1-or-later; some builds use GPL-2.0-or-later and `--enable-nonfree` builds may be unredistributable. Inspect the exact build and comply with source/license obligations if shipping it |
 | `uv`, Rust toolchain, GitHub Actions and Claude Code | Optional tooling, build/CI or client integration | Not delivered as part of the `selenium-mcp` source package | Review each separately if a future installer begins repackaging it |
+| [OpenAI tunnel-client](https://github.com/openai/tunnel-client) | Optional separately installed secure MCP tunnel executable | Not included in the source package | Verify the particular download's redistribution terms if packaging it |
 
 ## Required checks for a source-only publication
 
