@@ -8,7 +8,7 @@ Names and links identify the upstream project or its maintainers. They do not im
 
 | Project | Maintainers / project owners | Contribution to this project | Upstream | License |
 | --- | --- | --- | --- | --- |
-| [Selenium](https://www.selenium.dev/) | Selenium project contributors | Browser automation ecosystem and WebDriver conventions | [SeleniumHQ/selenium](https://github.com/SeleniumHQ/selenium) | [Apache-2.0](https://github.com/SeleniumHQ/selenium/blob/trunk/LICENSE) |
+| [Selenium](https://www.selenium.dev/) | Selenium contributors; Software Freedom Conservancy (project copyright holder) | Browser automation ecosystem and WebDriver conventions | [SeleniumHQ/selenium](https://github.com/SeleniumHQ/selenium) | [Apache-2.0](https://github.com/SeleniumHQ/selenium/blob/trunk/LICENSE) |
 | [Thirtyfour](https://github.com/stevepryde/thirtyfour) | Steve Pryde, Vrtgs and contributors | Rust WebDriver client | [stevepryde/thirtyfour](https://github.com/stevepryde/thirtyfour) | MIT OR Apache-2.0 |
 | [RMCP, the official MCP Rust SDK](https://github.com/modelcontextprotocol/rust-sdk) | Model Context Protocol Rust SDK contributors | MCP protocol server and tools | [modelcontextprotocol/rust-sdk](https://github.com/modelcontextprotocol/rust-sdk) | Apache-2.0 |
 | [Tokio](https://tokio.rs/) | Tokio contributors | Async runtime | [tokio-rs/tokio](https://github.com/tokio-rs/tokio) | MIT |
