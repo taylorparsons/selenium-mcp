@@ -36,6 +36,8 @@ class LicenseAuditTests(unittest.TestCase):
         self.assertTrue(audit.check_license("new", "1", "AGPL-3.0-only"))
         self.assertTrue(audit.check_license("new", "1", "UNKNOWN"))
         self.assertTrue(audit.check_license("new", "1", "LGPL-2.1-or-later"))
+        self.assertTrue(audit.check_license("new", "1", "MIT OR LGPL-2.1-or-later"))
+        self.assertTrue(audit.check_license("r-efi", "9", "MIT OR LGPL-2.1-or-later"))
 
     def test_accept_legacy_dual_license_format(self):
         self.assertEqual(audit.check_license("old", "1", "MIT/Apache-2.0"), [])
