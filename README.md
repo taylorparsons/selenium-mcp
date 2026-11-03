@@ -256,7 +256,8 @@ python3 scripts/generate_rust_credits.py --output THIRD_PARTY_RUST.md
 
 ## License and attribution
 
-Created by **Taylor Parsons**. Free to use, modify and distribute under the
+Copyright 2026 D. Taylor Parsons III. Created by **D. Taylor Parsons III**.
+Free to use, modify and distribute under the
 [Apache License, Version 2.0](LICENSE), including commercial use. When
 redistributing, preserve the required license and applicable notices, including
 the author attribution in [NOTICE](NOTICE), as specified by Apache-2.0.
