@@ -1,0 +1,8 @@
+# Keep the public snapshot limited to project code and user-facing docs.
+# The private development archive remains intact in this source repository.
+docs/ export-ignore
+docs/** export-ignore
+scripts/commit_with_traceability.py export-ignore
+scripts/owl export-ignore
+scripts/prepare_public_snapshot.sh export-ignore
+PUBLICATION.md export-ignore

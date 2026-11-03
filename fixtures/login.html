@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head><title>Fixture</title></head>
+<body>
+  <form id="login-form">
+    <input id="username" name="username" type="text">
+    <button id="submit-button" type="submit">Sign in</button>
+  </form>
+  <p id="result" style="display:none">Signed in</p>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('result').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

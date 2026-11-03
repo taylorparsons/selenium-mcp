@@ -1,0 +1,50 @@
+[package]
+name = "selenium-mcp"
+version = "0.1.0"
+edition = "2021"
+description = "MCP server that drives a real browser like a human tester: navigate, click, type, verify, and capture PNG/MP4/GIF evidence."
+license = "Apache-2.0"
+authors = ["Taylor Parsons"]
+repository = "https://github.com/taylorparsons/selenium-mcp"
+include = ["src/**", "tests/*.rs", "tests/*.cjs", "tests/*.py", "fixtures/**", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "NOTICE", "SECURITY.md", "CONTRIBUTING.md", "THIRD_PARTY_CREDITS.md", "THIRD_PARTY_RUST.md"]
+
+[lib]
+name = "selenium_mcp"
+path = "src/lib.rs"
+
+[[bin]]
+name = "selenium-mcp"
+path = "src/main.rs"
+
+[dependencies]
+rmcp = { version = "3.5", features = ["server", "macros", "transport-io", "schemars"] }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "io-std", "signal"] }
+thirtyfour = "0.38"
+schemars = "1.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_yaml = { package = "serde-saphyr", version = "2.0" }
+sha2 = "0.11"
+thiserror = "2.0"
+anyhow = "1"
+dirs = "7"
+ffmpeg-sidecar = "2.7"
+fastembed = "7.5.0"
+image = { version = "0.25", default-features = false, features = ["png"] }
+reqwest = { version = "0.13", features = ["json"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "std", "fmt"] }
+
+[features]
+e2e = []
+model-integration = []
+
+[[test]]
+name = "e2e"
+path = "tests/e2e.rs"
+required-features = ["e2e"]
+
+[[test]]
+name = "browser_security"
+path = "tests/browser_security.rs"
+required-features = ["e2e"]

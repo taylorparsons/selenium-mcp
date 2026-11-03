@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head><title>Persistent Login Fixture</title></head>
+<body>
+  <div id="login-form">
+    <input id="username" name="username" type="text">
+    <input id="password" name="password" type="password">
+    <button id="submit-button" type="button">Sign in</button>
+  </div>
+  <p id="result" style="display:none">Welcome back</p>
+  <script>
+    if (localStorage.getItem('authed') === 'true') {
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('result').style.display = 'block';
+    }
+    document.getElementById('submit-button').addEventListener('click', function () {
+      localStorage.setItem('authed', 'true');
+      document.getElementById('login-form').style.display = 'none';
+      document.getElementById('result').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

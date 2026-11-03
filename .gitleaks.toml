@@ -1,0 +1,17 @@
+# Preserve the built-in Gitleaks detection rules.
+[extend]
+useDefault = true
+
+# The installer verifies a public Google Linux package-signing fingerprint.
+# It is not a credential. Suppress only this exact value in this exact file
+# under generic-api-key; keep all other findings, including other values in
+# scripts/install.sh, reportable.
+[[rules]]
+id = "generic-api-key"
+
+[[rules.allowlists]]
+description = "Public Google Linux signing fingerprint in installer (not an API key)"
+condition = "AND"
+regexTarget = "secret"
+paths = ['''(^|/)scripts/install\.sh$''']
+regexes = ['''^EB4C1BFD4F042F6DDDCCEC917721F63BD38B4796$''']

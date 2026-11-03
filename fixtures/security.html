@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Security fixture</title>
+<label>Password <input id="password" type="password" aria-label="Password" value="synthetic-prefill"></label>
+<input id="csrf" type="hidden" value="synthetic-hidden-token">
+<input id="email" type="email" placeholder="Email address" value="synthetic-personal-value">
+<textarea id="notes">synthetic-private-notes</textarea>
+<button id="submit">Sign in<span hidden>synthetic-hidden-label</span><textarea hidden>synthetic-private-child</textarea></button>
+<section aria-hidden="true"><button id="hidden-child">synthetic-hidden-child</button></section>
+<div contenteditable="true" id="editor"><span id="editable-child" role="textbox">synthetic-edited-value</span></div>
+<input id="revealed-password" name="password" type="text" aria-label="Password">
+<input id="verification" type="text" autocomplete="ONE-TIME-CODE">
+</html>

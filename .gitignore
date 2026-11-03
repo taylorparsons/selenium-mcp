@@ -1,0 +1,50 @@
+/target
+**/*.rs.bk
+.DS_Store
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+
+# All personal runtime data stays local, including flows and baselines.
+/.selenium-mcp/
+/.selenium-mcp-*/
+/.local/
+/local/
+/private/
+/personal/
+/docs/private/
+/docs/personal/
+/reports/
+/security-reports/
+/audit-results*.json
+*.log
+
+# Credentials and signing material. Never force-add personal secrets.
+credentials*.json
+secrets*.json
+secrets*.yaml
+secrets*.yml
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# Personal agent configuration and scratch work.
+/.codex/
+/.claude/
+/.agents/
+/.superpowers/
+/.worktrees/
+
+# Share the selenium-mcp Claude skill; keep other local Claude state private.
+!/.claude/
+/.claude/*
+!/.claude/skills/
+/.claude/skills/*
+!/.claude/skills/selenium-mcp/
+/.claude/skills/selenium-mcp/*
+!/.claude/skills/selenium-mcp/SKILL.md
