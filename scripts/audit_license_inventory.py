@@ -79,7 +79,12 @@ def check_license(name: str, version: str, expression: str) -> list[str]:
     errors = [f"{label}: unreviewed license identifier(s): {', '.join(sorted(unknown))}"] if unknown else []
     if "MPL-2.0" in tokens and (name, version) not in REVIEWED_MPL_PACKAGES:
         errors.append(f"{label}: MPL-2.0 package needs its own release review")
-    if "LGPL-2.1-or-later" in tokens and (\n        (name, version) not in REVIEWED_LGPL_PACKAGES\n        or not ({"MIT", "Apache-2.0"} & tokens)\n        or "OR" not in tokens\n    ):\n        errors.append(f"{label}: LGPL choice requires individual review")
+    if "LGPL-2.1-or-later" in tokens and (
+        (name, version) not in REVIEWED_LGPL_PACKAGES
+        or not ({"MIT", "Apache-2.0"} & tokens)
+        or "OR" not in tokens
+    ):
+        errors.append(f"{label}: LGPL choice requires individual review")
     return errors
 
 
