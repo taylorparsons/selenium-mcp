@@ -21,7 +21,7 @@ Names and links identify the upstream project or its maintainers. They do not im
 | [Chroma](https://www.trychroma.com/) | Chroma contributors | Optional vector storage and search | [chroma-core/chroma](https://github.com/chroma-core/chroma) | Apache-2.0 |
 | [FastEmbed-rs](https://github.com/Anush008/fastembed-rs) | Anush and contributors | Local embedding inference | [Anush008/fastembed-rs](https://github.com/Anush008/fastembed-rs) | Apache-2.0 |
 | [ONNX Runtime](https://onnxruntime.ai/) | Microsoft and ONNX Runtime contributors | Model inference via FastEmbed | [microsoft/onnxruntime](https://github.com/microsoft/onnxruntime) | MIT |
-| [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) | Sentence Transformers contributors | Downloaded text embedding model | [Model card](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) | Apache-2.0 |
+| [Qdrant/all-MiniLM-L6-v2-onnx](https://huggingface.co/Qdrant/all-MiniLM-L6-v2-onnx) | Qdrant model maintainers; model based on work by Sentence Transformers contributors | ONNX model downloaded by FastEmbed 7.5.0 for `AllMiniLML6V2` | [ONNX model card](https://huggingface.co/Qdrant/all-MiniLM-L6-v2-onnx), [original model](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2) | Apache-2.0 |
 
 ## Media and supporting Rust libraries
 
