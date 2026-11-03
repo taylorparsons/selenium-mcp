@@ -1,6 +1,6 @@
 # Open-source credits
 
-`selenium-mcp` is an independent project created by Taylor Parsons, licensed under Apache-2.0. It is built with and around work maintained by open-source communities. Thank you to the developers, maintainers and contributors listed below.
+`selenium-mcp` is an independent project created by D. Taylor Parsons III, licensed under Apache-2.0. It is built with and around work maintained by open-source communities. Thank you to the developers, maintainers and contributors listed below.
 
 Names and links identify the upstream project or its maintainers. They do not imply that those projects endorse or maintain `selenium-mcp`.
 
@@ -52,3 +52,11 @@ It obtains crate names, exact resolved versions, authors, repository links and S
 This project's `LICENSE` and `NOTICE` apply to `selenium-mcp` itself. Third-party code, dependencies, binaries and model weights retain their own licenses and notices. See each upstream link and the generated dependency inventory for their terms. FFmpeg's applicable license depends on how the executable was built; Chrome is not an open-source dependency merely because ChromeDriver or Chromium components are available under open-source licenses.
 
 Credits are an acknowledgment, not an assertion of affiliation or endorsement and not a substitute for any license files, notices, attribution or redistribution obligations required by the upstream projects.
+
+## License compliance and distribution
+
+See [LICENSE_COMPLIANCE.md](LICENSE_COMPLIANCE.md) for the reviewed Rust license
+exceptions (including `option-ext` under MPL-2.0), separately installed or
+downloaded applications, model weights and the obligations for compiled releases.
+This credits page and `THIRD_PARTY_RUST.md` identify dependencies but do not
+replace their full license texts and copyright notices in a binary distribution.
