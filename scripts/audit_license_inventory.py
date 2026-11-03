@@ -30,6 +30,10 @@ REVIEWED_IDS = {
 # LICENSE_COMPLIANCE.md before releasing compiled executables.
 REVIEWED_MPL_PACKAGES = {("option-ext", "0.2.0")}
 
+# Both published versions offer MIT and Apache-2.0 alternatives. Do not
+# approve an unrelated LGPL crate solely because an OR expression is present.
+REVIEWED_LGPL_PACKAGES = {("r-efi", "5.3.0"), ("r-efi", "6.0.0")}
+
 ROW = re.compile(
     r"^\| \[`(?P<name>[^`]+)`\]"
     r"\(https://crates\.io/crates/[^)]*\) \| "
@@ -75,8 +79,7 @@ def check_license(name: str, version: str, expression: str) -> list[str]:
     errors = [f"{label}: unreviewed license identifier(s): {', '.join(sorted(unknown))}"] if unknown else []
     if "MPL-2.0" in tokens and (name, version) not in REVIEWED_MPL_PACKAGES:
         errors.append(f"{label}: MPL-2.0 package needs its own release review")
-    if "LGPL-2.1-or-later" in tokens and not ({"MIT", "Apache-2.0"} & tokens):
-        errors.append(f"{label}: LGPL without a reviewed permissive alternative")
+    if "LGPL-2.1-or-later" in tokens and (\n        (name, version) not in REVIEWED_LGPL_PACKAGES\n        or not ({"MIT", "Apache-2.0"} & tokens)\n        or "OR" not in tokens\n    ):\n        errors.append(f"{label}: LGPL choice requires individual review")
     return errors
 
 
