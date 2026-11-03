@@ -248,6 +248,9 @@ maintainer acknowledgments, with upstream links and licenses. The
 [resolved Rust dependency credits](THIRD_PARTY_RUST.md) list direct and
 transitive crates, their published authors, licenses, and source repositories.
 
+Read the [license compliance review](LICENSE_COMPLIANCE.md) before distributing
+compiled executables, containers, bundled models or third-party binaries.
+
 To update the Rust inventory after a dependency change:
 
 ```sh
