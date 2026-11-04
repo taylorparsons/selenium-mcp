@@ -84,6 +84,7 @@ pub async fn run_suite(options: RunSuiteOptions<'_>) -> SuiteReport {
 
     let mut reports = Vec::new();
     let mut any_failed = false;
+    let mut infrastructure_error = None;
 
     for path in yaml_paths {
         let name = path
@@ -134,13 +135,18 @@ pub async fn run_suite(options: RunSuiteOptions<'_>) -> SuiteReport {
             },
         )
         .await;
+        if let Some(reason) = infrastructure_failure(&report) {
+            infrastructure_error = Some(reason);
+        }
         if !report.passed {
             any_failed = true;
         }
         reports.push(report);
     }
 
-    let outcome = if any_failed {
+    let outcome = if let Some(reason) = infrastructure_error {
+        SuiteOutcome::Infra(reason)
+    } else if any_failed {
         SuiteOutcome::SomeFailed
     } else {
         SuiteOutcome::AllPassed
@@ -165,5 +171,38 @@ mod tests {
     #[test]
     fn infra_maps_to_two() {
         assert_eq!(exit_code(&SuiteOutcome::Infra("bad driver".to_string())), 2);
+    }
+}
+
+// run_flow emits these setup outcomes before executing any user steps.
+fn infrastructure_failure(report: &RunReport) -> Option<String> {
+    let step = report.steps.first()?;
+    if !step.passed && matches!(step.description.as_str(),
+        "launch browser" | "configure headless chrome" | "configure fixed viewport" |
+        "configure persistent profile" | "validate flow"
+    ) {
+        Some(step.error.clone().unwrap_or_else(|| step.description.clone()))
+    } else {
+        None
+    }
+}
+
+#[cfg(test)]
+mod infrastructure_tests {
+    use super::*;
+    use crate::report::StepOutcome;
+
+    #[test]
+    fn browser_launch_failure_is_infrastructure_but_assertion_is_not() {
+        let mut report = RunReport {
+            flow_name: "test".into(), passed: false, duration_ms: 0,
+            steps: vec![StepOutcome {
+                description: "launch browser".into(), passed: false,
+                error: Some("driver unavailable".into()), healed: None,
+            }],
+        };
+        assert_eq!(infrastructure_failure(&report).as_deref(), Some("driver unavailable"));
+        report.steps[0].description = "assert_that".into();
+        assert!(infrastructure_failure(&report).is_none());
     }
 }

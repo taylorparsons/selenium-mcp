@@ -37,6 +37,22 @@ impl ActionLog {
         Ok(std::mem::take(&mut recorded.steps))
     }
 
+    /// Keep the log intact unless the persistence callback succeeds.
+    pub fn save_with<T>(
+        &self,
+        save: impl FnOnce(Vec<FlowStep>) -> Result<T, crate::error::AppError>,
+    ) -> Result<T, crate::error::AppError> {
+        let mut recorded = self.0.lock().unwrap();
+        if recorded.unsaveable_secret {
+            return Err(crate::error::AppError::InvalidTarget(
+                "cannot save this session: sensitive text was typed without env_var; start a new session and use env_var for sensitive input".into(),
+            ));
+        }
+        let result = save(recorded.steps.clone())?;
+        recorded.steps.clear();
+        Ok(result)
+    }
+
     pub fn clear(&self) {
         *self.0.lock().unwrap() = RecordedActions::default();
     }
@@ -89,5 +105,25 @@ mod tests {
         );
         let serialized = format!("{actions:?}");
         assert!(!serialized.contains("audit-sensitive-value"));
+    }
+}
+
+#[cfg(test)]
+mod save_tests {
+    use super::*;
+
+    #[test]
+    fn failed_save_preserves_actions_for_retry() {
+        let log = ActionLog::default();
+        log.append(FlowStep::Navigate { url: "https://example.com".into() });
+        let failed: Result<(), _> = log.save_with(|_| {
+            Err(crate::error::AppError::InvalidTarget("synthetic write failure".into()))
+        });
+        assert!(failed.is_err());
+        log.save_with(|steps| {
+            assert_eq!(steps.len(), 1);
+            Ok(())
+        }).unwrap();
+        assert!(log.take_all().unwrap().is_empty());
     }
 }
