@@ -4,9 +4,9 @@ version = "0.1.0"
 edition = "2021"
 description = "MCP server that drives a real browser like a human tester: navigate, click, type, verify, and capture PNG/MP4/GIF evidence."
 license = "Apache-2.0"
-authors = ["Taylor Parsons"]
+authors = ["D. Taylor Parsons III <taylor.parsons@gmail.com>"]
 repository = "https://github.com/taylorparsons/selenium-mcp"
-include = ["src/**", "tests/*.rs", "tests/*.cjs", "tests/*.py", "fixtures/**", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "NOTICE", "SECURITY.md", "CONTRIBUTING.md", "THIRD_PARTY_CREDITS.md", "THIRD_PARTY_RUST.md"]
+include = ["src/**", "tests/*.rs", "tests/*.cjs", "tests/*.py", "fixtures/**", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "NOTICE", "SECURITY.md", "CONTRIBUTING.md", "THIRD_PARTY_CREDITS.md", "THIRD_PARTY_RUST.md", "LICENSE_COMPLIANCE.md"]
 
 [lib]
 name = "selenium_mcp"
