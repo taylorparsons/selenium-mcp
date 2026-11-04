@@ -343,7 +343,7 @@ for the upstream browser, MCP, model, database and media projects.
 | [`system-configuration-sys`](https://crates.io/crates/system-configuration-sys/0.6.0) | 0.6.0 | Mullvad VPN | MIT OR Apache-2.0 | [upstream](https://github.com/mullvad/system-configuration-rs) |
 | [`tar`](https://crates.io/crates/tar/0.4.46) | 0.4.46 | Alex Crichton | MIT OR Apache-2.0 | [upstream](https://github.com/composefs/tar-rs) |
 | [`tempfile`](https://crates.io/crates/tempfile/3.27.0) | 3.27.0 | Steven Allen, The Rust Project Developers, Ashley Mannix, Jason White | MIT OR Apache-2.0 | [upstream](https://github.com/Stebalien/tempfile) |
-| [`thirtyfour`](https://crates.io/crates/thirtyfour/0.38.0) | 0.38.0 | Steve Pryde, Vrtgs | MIT OR Apache-2.0 | [upstream](https://github.com/stevepryde/thirtyfour) |
+| [`thirtyfour`](https://crates.io/crates/thirtyfour/0.38.1) | 0.38.1 | Steve Pryde, Vrtgs | MIT OR Apache-2.0 | [upstream](https://github.com/stevepryde/thirtyfour) |
 | [`thirtyfour-macros`](https://crates.io/crates/thirtyfour-macros/0.3.1) | 0.3.1 | Steve Pryde, Vrtgs | MIT OR Apache-2.0 | [upstream](https://github.com/stevepryde/thirtyfour) |
 | [`thiserror`](https://crates.io/crates/thiserror/2.0.21) | 2.0.21 | David Tolnay | MIT OR Apache-2.0 | [upstream](https://github.com/dtolnay/thiserror) |
 | [`thiserror-impl`](https://crates.io/crates/thiserror-impl/2.0.21) | 2.0.21 | David Tolnay | MIT OR Apache-2.0 | [upstream](https://github.com/dtolnay/thiserror) |

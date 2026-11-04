@@ -248,6 +248,9 @@ maintainer acknowledgments, with upstream links and licenses. The
 [resolved Rust dependency credits](THIRD_PARTY_RUST.md) list direct and
 transitive crates, their published authors, licenses, and source repositories.
 
+Read the [license compliance review](LICENSE_COMPLIANCE.md) before distributing
+compiled executables, containers, bundled models or third-party binaries.
+
 To update the Rust inventory after a dependency change:
 
 ```sh
@@ -256,7 +259,8 @@ python3 scripts/generate_rust_credits.py --output THIRD_PARTY_RUST.md
 
 ## License and attribution
 
-Created by **Taylor Parsons**. Free to use, modify and distribute under the
+Copyright 2026 D. Taylor Parsons III. Created by **D. Taylor Parsons III**.
+Free to use, modify and distribute under the
 [Apache License, Version 2.0](LICENSE), including commercial use. When
 redistributing, preserve the required license and applicable notices, including
 the author attribution in [NOTICE](NOTICE), as specified by Apache-2.0.
