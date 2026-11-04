@@ -115,15 +115,20 @@ mod save_tests {
     #[test]
     fn failed_save_preserves_actions_for_retry() {
         let log = ActionLog::default();
-        log.append(FlowStep::Navigate { url: "https://example.com".into() });
+        log.append(FlowStep::Navigate {
+            url: "https://example.com".into(),
+        });
         let failed: Result<(), _> = log.save_with(|_| {
-            Err(crate::error::AppError::InvalidTarget("synthetic write failure".into()))
+            Err(crate::error::AppError::InvalidTarget(
+                "synthetic write failure".into(),
+            ))
         });
         assert!(failed.is_err());
         log.save_with(|steps| {
             assert_eq!(steps.len(), 1);
             Ok(())
-        }).unwrap();
+        })
+        .unwrap();
         assert!(log.take_all().unwrap().is_empty());
     }
 }

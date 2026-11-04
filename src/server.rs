@@ -661,7 +661,9 @@ impl SeleniumMcpServer {
         };
         let result = self.action_log.save_with(|steps| {
             if steps.is_empty() {
-                return Err(AppError::InvalidTarget("no actions recorded this session".into()));
+                return Err(AppError::InvalidTarget(
+                    "no actions recorded this session".into(),
+                ));
             }
             for step in &steps {
                 if let FlowStep::TypeText { text, .. } = step {

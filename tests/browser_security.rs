@@ -195,7 +195,10 @@ async fn visible_text_assertion_rejects_hidden_markup_and_flow_replays() {
     let (app, _) = app("visible-text").await;
     let page = "data:text/html,<body><p>Visible marker</p><span style='display:none'>Hidden marker</span><!-- Comment marker --><script>var marker='Script marker';</script></body>";
     assert_eq!(
-        app.navigate(Parameters(NavigateArgs { url: page.into() })).await.unwrap().is_error,
+        app.navigate(Parameters(NavigateArgs { url: page.into() }))
+            .await
+            .unwrap()
+            .is_error,
         Some(false)
     );
     for (text, should_fail) in [
@@ -204,19 +207,30 @@ async fn visible_text_assertion_rejects_hidden_markup_and_flow_replays() {
         ("Comment marker", true),
         ("Script marker", true),
     ] {
-        let result = app.assert_that(Parameters(AssertThatArgs {
-            that: AssertCondition {
-                text_visible: Some(text.into()),
-                ..Default::default()
-            },
-        })).await.unwrap();
+        let result = app
+            .assert_that(Parameters(AssertThatArgs {
+                that: AssertCondition {
+                    text_visible: Some(text.into()),
+                    ..Default::default()
+                },
+            }))
+            .await
+            .unwrap();
         assert_eq!(result.is_error, Some(should_fail), "{text}: {result:?}");
     }
-    assert_eq!(app.flow_save(Parameters(save())).await.unwrap().is_error, Some(false));
+    assert_eq!(
+        app.flow_save(Parameters(save())).await.unwrap().is_error,
+        Some(false)
+    );
     app.session_end().await.unwrap();
-    let replay = app.flow_run(Parameters(FlowRunArgs {
-        name: "safe-login".into(), headless: true,
-        heal_write_back: false, update_baselines: false,
-    })).await.unwrap();
+    let replay = app
+        .flow_run(Parameters(FlowRunArgs {
+            name: "safe-login".into(),
+            headless: true,
+            heal_write_back: false,
+            update_baselines: false,
+        }))
+        .await
+        .unwrap();
     assert_eq!(replay.is_error, Some(false), "{replay:?}");
 }

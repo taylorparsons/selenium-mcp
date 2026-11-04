@@ -177,11 +177,21 @@ mod tests {
 // run_flow emits these setup outcomes before executing any user steps.
 fn infrastructure_failure(report: &RunReport) -> Option<String> {
     let step = report.steps.first()?;
-    if !step.passed && matches!(step.description.as_str(),
-        "launch browser" | "configure headless chrome" | "configure fixed viewport" |
-        "configure persistent profile" | "validate flow"
-    ) {
-        Some(step.error.clone().unwrap_or_else(|| step.description.clone()))
+    if !step.passed
+        && matches!(
+            step.description.as_str(),
+            "launch browser"
+                | "configure headless chrome"
+                | "configure fixed viewport"
+                | "configure persistent profile"
+                | "validate flow"
+        )
+    {
+        Some(
+            step.error
+                .clone()
+                .unwrap_or_else(|| step.description.clone()),
+        )
     } else {
         None
     }
@@ -195,13 +205,20 @@ mod infrastructure_tests {
     #[test]
     fn browser_launch_failure_is_infrastructure_but_assertion_is_not() {
         let mut report = RunReport {
-            flow_name: "test".into(), passed: false, duration_ms: 0,
+            flow_name: "test".into(),
+            passed: false,
+            duration_ms: 0,
             steps: vec![StepOutcome {
-                description: "launch browser".into(), passed: false,
-                error: Some("driver unavailable".into()), healed: None,
+                description: "launch browser".into(),
+                passed: false,
+                error: Some("driver unavailable".into()),
+                healed: None,
             }],
         };
-        assert_eq!(infrastructure_failure(&report).as_deref(), Some("driver unavailable"));
+        assert_eq!(
+            infrastructure_failure(&report).as_deref(),
+            Some("driver unavailable")
+        );
         report.steps[0].description = "assert_that".into();
         assert!(infrastructure_failure(&report).is_none());
     }
