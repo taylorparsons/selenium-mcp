@@ -287,8 +287,8 @@ for the upstream browser, MCP, model, database and media projects.
 | [`reqwest`](https://crates.io/crates/reqwest/0.13.5) | 0.13.5 | Sean McArthur | MIT OR Apache-2.0 | [upstream](https://github.com/seanmonstar/reqwest) |
 | [`rgb`](https://crates.io/crates/rgb/0.8.53) | 0.8.53 | Kornel Lesiński, James Forster | MIT | [upstream](https://github.com/kornelski/rust-rgb) |
 | [`ring`](https://crates.io/crates/ring/0.17.14) | 0.17.14 | Not declared in crate metadata | Apache-2.0 AND ISC | [upstream](https://github.com/briansmith/ring) |
-| [`rmcp`](https://crates.io/crates/rmcp/3.5.1) | 3.5.1 | Not declared in crate metadata | Apache-2.0 | [upstream](https://github.com/modelcontextprotocol/rust-sdk/) |
-| [`rmcp-macros`](https://crates.io/crates/rmcp-macros/3.6.0) | 3.6.0 | Not declared in crate metadata | Apache-2.0 | [upstream](https://github.com/modelcontextprotocol/rust-sdk/) |
+| [`rmcp`](https://crates.io/crates/rmcp/3.8.0) | 3.8.0 | Not declared in crate metadata | Apache-2.0 | [upstream](https://github.com/modelcontextprotocol/rust-sdk/) |
+| [`rmcp-macros`](https://crates.io/crates/rmcp-macros/3.8.0) | 3.8.0 | Not declared in crate metadata | Apache-2.0 | [upstream](https://github.com/modelcontextprotocol/rust-sdk/) |
 | [`rustc-hash`](https://crates.io/crates/rustc-hash/2.1.3) | 2.1.3 | The Rust Project Developers | Apache-2.0 OR MIT | [upstream](https://github.com/rust-lang/rustc-hash) |
 | [`rustc_version`](https://crates.io/crates/rustc_version/0.4.1) | 0.4.1 | Not declared in crate metadata | MIT OR Apache-2.0 | [upstream](https://github.com/djc/rustc-version-rs) |
 | [`rustix`](https://crates.io/crates/rustix/1.1.5) | 1.1.5 | Dan Gohman, Jakub Konka | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT | [upstream](https://github.com/bytecodealliance/rustix) |
