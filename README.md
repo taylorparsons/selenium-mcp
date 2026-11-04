@@ -174,8 +174,8 @@ steps:
 a single declared environment reference. Typing reports omit entered values, and
 page indexing never reads form-control values. Captured images/video can still
 show private content. `target.semantic` is what
-self-healing re-resolves against if the concrete `css`/`xpath` breaks — `flow_save`
-fills it in automatically from a live session's element index. `assert_visual` steps
+self-healing re-resolves against if the concrete `css`/`xpath` breaks — provide it when recording a target or edit it into the saved YAML. `flow_save`
+preserves the supplied targets; it does not generate semantic descriptions. `assert_visual` steps
 always run at a fixed 1280x800 viewport unless the flow sets its own
 `viewport_width`/`viewport_height`, so a baseline captured once stays comparable on
 every future run.

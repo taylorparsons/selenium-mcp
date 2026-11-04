@@ -659,37 +659,36 @@ impl SeleniumMcpServer {
             Ok(path) => path,
             Err(e) => return Ok(e.into_tool_result()),
         };
-        let steps = match self.action_log.take_all() {
-            Ok(steps) => steps,
-            Err(e) => return Ok(e.into_tool_result()),
-        };
-        if steps.is_empty() {
-            return Ok(CallToolResult::error(vec![ContentBlock::text(
-                "no actions recorded this session — nothing to save",
-            )]));
-        }
-        for step in &steps {
-            if let FlowStep::TypeText { text, .. } = step {
-                if let Some(name) = crate::flow::secret_env_name(text) {
-                    if !env.iter().any(|n| n == name) {
-                        env.push(name.into());
+        let result = self.action_log.save_with(|steps| {
+            if steps.is_empty() {
+                return Err(AppError::InvalidTarget(
+                    "no actions recorded this session".into(),
+                ));
+            }
+            for step in &steps {
+                if let FlowStep::TypeText { text, .. } = step {
+                    if let Some(name) = crate::flow::secret_env_name(text) {
+                        if !env.iter().any(|n| n == name) {
+                            env.push(name.into());
+                        }
                     }
                 }
             }
-        }
-        let flow = Flow {
-            name: name.clone(),
-            description,
-            tags,
-            base_url,
-            env,
-            created_epoch: Some(now_epoch_secs()),
-            viewport_width: None,
-            viewport_height: None,
-            profile: None,
-            steps,
-        };
-        match save_flow(&path, &flow) {
+            let flow = Flow {
+                name: name.clone(),
+                description,
+                tags,
+                base_url,
+                env,
+                created_epoch: Some(now_epoch_secs()),
+                viewport_width: None,
+                viewport_height: None,
+                profile: None,
+                steps,
+            };
+            save_flow(&path, &flow)
+        });
+        match result {
             Ok(()) => Ok(CallToolResult::success(vec![ContentBlock::text(
                 path.display().to_string(),
             )])),
@@ -1968,8 +1967,9 @@ async fn do_assert_that(
             let text = text.to_string();
             session
                 .with_driver(|driver| async move {
-                    let source = driver.source().await.map_err(AppError::from)?;
-                    Ok(source.contains(&text))
+                    let body = driver.find(By::Css("body")).await.map_err(AppError::from)?;
+                    let visible = body.text().await.map_err(AppError::from)?;
+                    Ok(visible.contains(&text))
                 })
                 .await
         }

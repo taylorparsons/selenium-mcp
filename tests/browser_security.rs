@@ -187,3 +187,50 @@ async fn environment_secret_saves_only_a_reference_and_replays_redacted() {
     assert_eq!(report.is_error, Some(false), "{report:?}");
     assert!(!format!("{report:?}").contains("synthetic-sensitive-input"));
 }
+
+#[tokio::test]
+async fn visible_text_assertion_rejects_hidden_markup_and_flow_replays() {
+    use selenium_mcp::flow::AssertCondition;
+    use selenium_mcp::server::AssertThatArgs;
+    let (app, _) = app("visible-text").await;
+    let page = "data:text/html,<body><p>Visible marker</p><span style='display:none'>Hidden marker</span><!-- Comment marker --><script>var marker='Script marker';</script></body>";
+    assert_eq!(
+        app.navigate(Parameters(NavigateArgs { url: page.into() }))
+            .await
+            .unwrap()
+            .is_error,
+        Some(false)
+    );
+    for (text, should_fail) in [
+        ("Visible marker", false),
+        ("Hidden marker", true),
+        ("Comment marker", true),
+        ("Script marker", true),
+    ] {
+        let result = app
+            .assert_that(Parameters(AssertThatArgs {
+                that: AssertCondition {
+                    text_visible: Some(text.into()),
+                    ..Default::default()
+                },
+            }))
+            .await
+            .unwrap();
+        assert_eq!(result.is_error, Some(should_fail), "{text}: {result:?}");
+    }
+    assert_eq!(
+        app.flow_save(Parameters(save())).await.unwrap().is_error,
+        Some(false)
+    );
+    app.session_end().await.unwrap();
+    let replay = app
+        .flow_run(Parameters(FlowRunArgs {
+            name: "safe-login".into(),
+            headless: true,
+            heal_write_back: false,
+            update_baselines: false,
+        }))
+        .await
+        .unwrap();
+    assert_eq!(replay.is_error, Some(false), "{replay:?}");
+}
