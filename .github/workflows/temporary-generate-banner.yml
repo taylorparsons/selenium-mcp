@@ -1,0 +1,32 @@
+name: Generate PNG banner (temporary)
+on:
+  push:
+    branches:
+      - docs/add-readme-png-banner-20261104
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Convert banner SVG to PNG
+        run: |
+          python3 -m venv /tmp/banner-venv
+          /tmp/banner-venv/bin/pip install --quiet cairosvg
+          /tmp/banner-venv/bin/python - <<'PY'
+          import cairosvg
+          cairosvg.svg2png(url='assets/selenium-mcp-banner.svg', write_to='assets/selenium-mcp-banner.png')
+          PY
+          test -s assets/selenium-mcp-banner.png
+          file assets/selenium-mcp-banner.png
+      - name: Commit PNG and remove temporary renderer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/selenium-mcp-banner.png
+          git rm assets/selenium-mcp-banner.svg .github/workflows/temporary-generate-banner.yml
+          git commit -m "Add rendered PNG banner for README"
+          git push origin HEAD:docs/add-readme-png-banner-20261104
