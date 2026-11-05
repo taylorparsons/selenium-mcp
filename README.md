@@ -1,3 +1,5 @@
+![selenium-mcp: Rust-powered browser automation for MCP, idle RSS under 30 MB](assets/selenium-mcp-banner.png)
+
 # selenium-mcp
 
 An MCP server that drives a real browser like a human tester: navigate, click, type,
