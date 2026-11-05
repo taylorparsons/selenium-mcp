@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="900" viewBox="0 0 1600 900">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0A1119"/><stop offset="0.53" stop-color="#101B26"/><stop offset="1" stop-color="#0D1520"/></linearGradient>
+ <radialGradient id="aura"><stop offset="0" stop-color="#E27D40" stop-opacity=".24"/><stop offset=".55" stop-color="#BC643B" stop-opacity=".07"/><stop offset="1" stop-color="#B8542B" stop-opacity="0"/></radialGradient>
+ <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3B4B58"/><stop offset=".55" stop-color="#1B2B37"/><stop offset="1" stop-color="#293B48"/></linearGradient>
+ <linearGradient id="copper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFB66F"/><stop offset=".45" stop-color="#E98243"/><stop offset="1" stop-color="#BF5532"/></linearGradient>
+ <linearGradient id="chipFill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1C2A34"/><stop offset="1" stop-color="#0F1B26"/></linearGradient>
+ <filter id="shadow" x="-35%" y="-35%" width="170%" height="180%"><feGaussianBlur in="SourceAlpha" stdDeviation="20"/><feOffset dy="20"/><feComponentTransfer><feFuncA type="linear" slope=".30"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="#7490A1" opacity=".12"/></pattern>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<rect width="1600" height="900" fill="url(#dots)"/>
+<circle cx="410" cy="444" r="500" fill="url(#aura)"/>
+<!-- Upper / lower document flourishes -->
+<path d="M0 95 H290 L342 146 H477" fill="none" stroke="#436071" stroke-width="2" opacity=".30"/>
+<circle cx="478" cy="146" r="5" fill="#D78352" opacity=".50"/>
+<path d="M1600 813 H1345 L1296 764 H1206" fill="none" stroke="#436071" stroke-width="2" opacity=".26"/>
+<circle cx="1206" cy="764" r="5" fill="#E38A51" opacity=".42"/>
+<!-- illustrated machine / concentric rings -->
+<circle cx="407" cy="449" r="296" fill="none" stroke="#263C49" stroke-width="2" stroke-dasharray="4 13"/>
+<circle cx="407" cy="449" r="269" fill="none" stroke="#B9673D" stroke-opacity=".24" stroke-width="2"/>
+<path d="M 190 287 A 270 270 0 0 1 584 247" fill="none" stroke="#F3A66D" stroke-width="6" stroke-linecap="round" opacity=".77"/>
+<path d="M 630 600 A 270 270 0 0 1 225 646" fill="none" stroke="#F3A66D" stroke-width="5" stroke-linecap="round" opacity=".50"/>
+<!-- copper route pins -->
+<g fill="#131C25" stroke="#FFAE70" stroke-width="3"><circle cx="191" cy="286" r="11"/><circle cx="585" cy="246" r="11"/><circle cx="626" cy="603" r="10"/><circle cx="225" cy="646" r="10"/></g>
+<!-- browser window -->
+<g filter="url(#shadow)">
+<rect x="187" y="304" width="448" height="330" rx="27" fill="#101A24" stroke="#687F8E" stroke-width="3"/>
+<path d="M213 305 H610 Q635 305 635 333 V363 H187 V332 Q187 305 213 305 Z" fill="url(#metal)"/>
+<path d="M187 363 H635" stroke="#7C92A1" stroke-opacity=".65" stroke-width="2"/>
+<circle cx="221" cy="336" r="7" fill="#E4774E"/><circle cx="245" cy="336" r="7" fill="#E9B36D"/><circle cx="269" cy="336" r="7" fill="#83A898"/>
+<rect x="307" y="322" width="253" height="29" rx="13" fill="#14212A" stroke="#596D79" stroke-width="1.3"/>
+<path d="M327 338 l6 -6 6 6 v6 h-12z" fill="none" stroke="#8299A3" stroke-width="1.8"/>
+<path d="M350 338 H525" stroke="#536C78" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+<!-- page content representation -->
+<rect x="225" y="401" width="175" height="16" rx="8" fill="#314754"/>
+<rect x="225" y="427" width="125" height="8" rx="4" fill="#273F4B"/>
+<rect x="225" y="444" width="152" height="8" rx="4" fill="#273F4B"/>
+<rect x="225" y="531" width="143" height="52" rx="11" fill="#1D3440" stroke="#4E7281" stroke-width="2"/>
+<rect x="247" y="548" width="92" height="8" rx="4" fill="#8DA8B4" opacity=".78"/>
+<rect x="247" y="564" width="62" height="5" rx="2.5" fill="#597887" opacity=".72"/>
+<!-- motion line -->
+<path d="M358 473 C408 424 463 433 505 470 S564 531 590 480" fill="none" stroke="#EFA36C" stroke-width="4" stroke-linecap="round" stroke-dasharray="9 11" opacity=".82"/>
+<circle cx="367" cy="468" r="8" fill="#FFB070"/>
+<circle cx="586" cy="485" r="8" fill="#FFB070"/>
+<!-- rust gear + automation cursor -->
+<polygon points="469.0,424.0 479.1,424.7 486.1,437.2 494.3,440.0 507.5,434.3 515.9,439.9 515.7,454.3 521.4,460.8 535.7,462.5 540.1,471.5 532.8,483.9 534.4,492.4 546.0,501.0 545.3,511.1 532.8,518.1 530.0,526.3 535.7,539.5 530.1,547.9 515.7,547.7 509.2,553.4 507.5,567.7 498.5,572.1 486.1,564.8 477.6,566.4 469.0,578.0 458.9,577.3 451.9,564.8 443.7,562.0 430.5,567.7 422.1,562.1 422.3,547.7 416.6,541.2 402.3,539.5 397.9,530.5 405.2,518.1 403.6,509.6 392.0,501.0 392.7,490.9 405.2,483.9 408.0,475.7 402.3,462.5 407.9,454.1 422.3,454.3 428.8,448.6 430.5,434.3 439.5,429.9 451.9,437.2 460.4,435.6" fill="url(#copper)" stroke="#FFD0A2" stroke-width="1.2"/>
+<circle cx="469" cy="501" r="51" fill="#17232D" stroke="#FFBD85" stroke-width="3"/>
+<circle cx="469" cy="501" r="37" fill="#1B2B34" stroke="#B4704B" stroke-width="1.5"/>
+<!-- Selenium style cursor, not trademark -->
+<path d="M452 475 L452 527 L468 514 L479 538 L492 531 L479 506 L502 504 Z" fill="#EFF5F4" stroke="#0D1720" stroke-width="3" stroke-linejoin="round"/>
+</g>
+<!-- small floating app memory chip / route -->
+<g transform="translate(559 201) rotate(12)">
+ <rect x="0" y="0" width="112" height="92" rx="17" fill="url(#chipFill)" stroke="#A36B49" stroke-width="2.3"/>
+ <g stroke="#B07551" stroke-width="4" stroke-linecap="round"><path d="M26 -13 V0 M26 92 V105"/><path d="M54 -13 V0 M54 92 V105"/><path d="M82 -13 V0 M82 92 V105"/><path d="M-13 25 H0 M112 25 H125"/><path d="M-13 48 H0 M112 48 H125"/><path d="M-13 71 H0 M112 71 H125"/></g>
+ <rect x="23" y="18" width="66" height="55" rx="9" fill="#172731" stroke="#D69A6F" stroke-width="2"/>
+ <path d="M39 46 H72 M59 35 L72 46 L59 57" fill="none" stroke="#FFBA83" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<!-- small local indicator -->
+<g transform="translate(179 652)">
+<rect width="192" height="54" rx="27" fill="#132631" stroke="#536977" stroke-width="1.5"/>
+<circle cx="29" cy="27" r="8" fill="#96C8A9"/>
+<text x="48" y="35" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="600" fill="#D1E2DF">RUNS LOCALLY</text>
+</g>
+<!-- right typography -->
+<rect x="808" y="207" width="158" height="7" rx="3.5" fill="url(#copper)"/>
+<text x="806" y="263" font-family="Inter,Arial,sans-serif" font-size="22" letter-spacing="5" font-weight="700" fill="#E4A176">OPEN-SOURCE TOOLING</text>
+<text x="799" y="375" font-family="Inter,Arial,sans-serif" font-size="92" font-weight="800" letter-spacing="-5" fill="#F1F4F4">selenium<tspan fill="#E99861">-mcp</tspan></text>
+<text x="808" y="436" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="500" fill="#D5DFDF">Rust-powered browser automation</text>
+<text x="808" y="481" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="500" fill="#D5DFDF">for Model Context Protocol</text>
+<path d="M809 524 H1515" stroke="#3A4D58" stroke-width="2"/>
+<!-- metric tile -->
+<rect x="808" y="558" width="330" height="119" rx="19" fill="#152530" stroke="#51616B" stroke-width="1.2"/>
+<text x="834" y="625" font-family="Inter,Arial,sans-serif" font-size="61" font-weight="750" letter-spacing="-3" fill="#F6B17A">&lt;30 MB</text>
+<text x="836" y="655" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="650" letter-spacing="2.5" fill="#9BB0BA">SERVER IDLE RSS</text>
+<rect x="1154" y="558" width="361" height="119" rx="19" fill="#152530" stroke="#51616B" stroke-width="1.2"/>
+<circle cx="1192" cy="597" r="12" fill="none" stroke="#DFA36D" stroke-width="3"/>
+<path d="M1192 591 V599 L1198 603" fill="none" stroke="#DFA36D" stroke-width="2.5" stroke-linecap="round"/>
+<text x="1215" y="608" font-family="Inter,Arial,sans-serif" font-size="26" font-weight="650" fill="#D9E3E5">Lazy loaded</text>
+<text x="1180" y="649" font-family="Inter,Arial,sans-serif" font-size="19" fill="#A9C0C7">Browser + semantic memory</text>
+<text x="808" y="748" font-family="Inter,Arial,sans-serif" font-size="21" font-weight="500" letter-spacing=".2" fill="#91A7B5">NAVIGATE  /  CLICK  /  VERIFY  /  RECORD</text>
+<path d="M808 770 H1025" stroke="#E49B64" stroke-width="3" opacity=".66"/>
+<text x="810" y="827" font-family="Inter,Arial,sans-serif" font-size="19" letter-spacing="1.1" fill="#738D9C">github.com/taylorparsons/selenium-mcp</text>
+</svg>
