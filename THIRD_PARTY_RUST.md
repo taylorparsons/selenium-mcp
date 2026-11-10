@@ -107,7 +107,7 @@ for the upstream browser, MCP, model, database and media projects.
 | [`errno`](https://crates.io/crates/errno/0.3.14) | 0.3.14 | Chris Wong, Dan Gohman | MIT OR Apache-2.0 | [upstream](https://github.com/lambda-fairy/rust-errno) |
 | [`esaxx-rs`](https://crates.io/crates/esaxx-rs/0.1.10) | 0.1.10 | Nicolas Patry | Apache-2.0 | [upstream](https://github.com/Narsil/esaxx-rs) |
 | [`exr`](https://crates.io/crates/exr/1.74.2) | 1.74.2 | johannesvollmer | BSD-3-Clause | [upstream](https://github.com/johannesvollmer/exrs) |
-| [`fastembed`](https://crates.io/crates/fastembed/7.5.0) | 7.5.0 | Anush008, Josh Niemelä, GrisiaEvy, George MacKerron, Timon Vonk, Luya Wang, Tri, Denny Wong, Alex Rozgo, Gil | Apache-2.0 | [upstream](https://github.com/Anush008/fastembed-rs) |
+| [`fastembed`](https://crates.io/crates/fastembed/7.6.1) | 7.6.1 | Anush008, Josh Niemelä, GrisiaEvy, George MacKerron, Timon Vonk, Luya Wang, Tri, Denny Wong, Alex Rozgo, Gil | Apache-2.0 | [upstream](https://github.com/Anush008/fastembed-rs) |
 | [`fastrand`](https://crates.io/crates/fastrand/2.5.0) | 2.5.0 | Stjepan Glavina | Apache-2.0 OR MIT | [upstream](https://github.com/smol-rs/fastrand) |
 | [`fax`](https://crates.io/crates/fax/0.2.7) | 0.2.7 | Sebastian K | MIT | [upstream](https://github.com/pdf-rs/fax) |
 | [`fdeflate`](https://crates.io/crates/fdeflate/0.3.7) | 0.3.7 | The image-rs Developers | MIT OR Apache-2.0 | [upstream](https://github.com/image-rs/fdeflate) |
