@@ -63,7 +63,7 @@ for the upstream browser, MCP, model, database and media projects.
 | [`const-oid`](https://crates.io/crates/const-oid/0.10.2) | 0.10.2 | RustCrypto Developers | Apache-2.0 OR MIT | [upstream](https://github.com/RustCrypto/formats) |
 | [`const_format`](https://crates.io/crates/const_format/0.2.36) | 0.2.36 | rodrimati1992 | Zlib | [upstream](https://github.com/rodrimati1992/const_format_crates/) |
 | [`const_format_proc_macros`](https://crates.io/crates/const_format_proc_macros/0.2.34) | 0.2.34 | rodrimati1992 | Zlib | [upstream](https://github.com/rodrimati1992/const_format_crates/) |
-| [`cookie`](https://crates.io/crates/cookie/0.18.2) | 0.18.2 | Sergio Benitez, Alex Crichton | MIT OR Apache-2.0 | [upstream](https://github.com/SergioBenitez/cookie-rs) |
+| [`cookie`](https://crates.io/crates/cookie/0.18.3) | 0.18.3 | Sergio Benitez, Alex Crichton | MIT OR Apache-2.0 | [upstream](https://github.com/SergioBenitez/cookie-rs) |
 | [`cookie_store`](https://crates.io/crates/cookie_store/0.22.1) | 0.22.1 | Patrick Fernie | MIT OR Apache-2.0 | [upstream](https://github.com/pfernie/cookie_store) |
 | [`core-foundation`](https://crates.io/crates/core-foundation/0.10.1) | 0.10.1 | The Servo Project Developers | MIT OR Apache-2.0 | [upstream](https://github.com/servo/core-foundation-rs) |
 | [`core-foundation`](https://crates.io/crates/core-foundation/0.9.4) | 0.9.4 | The Servo Project Developers | MIT OR Apache-2.0 | [upstream](https://github.com/servo/core-foundation-rs) |
@@ -119,7 +119,7 @@ for the upstream browser, MCP, model, database and media projects.
 | [`foldhash`](https://crates.io/crates/foldhash/0.2.0) | 0.2.0 | Orson Peters | Zlib | [upstream](https://github.com/orlp/foldhash) |
 | [`foreign-types`](https://crates.io/crates/foreign-types/0.3.2) | 0.3.2 | Steven Fackler | MIT/Apache-2.0 | [upstream](https://github.com/sfackler/foreign-types) |
 | [`foreign-types-shared`](https://crates.io/crates/foreign-types-shared/0.1.1) | 0.1.1 | Steven Fackler | MIT/Apache-2.0 | [upstream](https://github.com/sfackler/foreign-types) |
-| [`form_urlencoded`](https://crates.io/crates/form_urlencoded/1.2.2) | 1.2.2 | The rust-url developers | MIT OR Apache-2.0 | [upstream](https://github.com/servo/rust-url) |
+| [`form_urlencoded`](https://crates.io/crates/form_urlencoded/1.2.3) | 1.2.3 | The rust-url developers | MIT OR Apache-2.0 | [upstream](https://github.com/servo/rust-url) |
 | [`fs4`](https://crates.io/crates/fs4/1.1.0) | 1.1.0 | Dan Burkert, Al Liu | MIT OR Apache-2.0 | [upstream](https://github.com/al8n/fs4) |
 | [`fs_extra`](https://crates.io/crates/fs_extra/1.3.0) | 1.3.0 | Denis Kurilenko | MIT | [upstream](https://github.com/webdesus/fs_extra) |
 | [`futures`](https://crates.io/crates/futures/0.3.34) | 0.3.34 | Not declared in crate metadata | MIT OR Apache-2.0 | [upstream](https://github.com/rust-lang/futures-rs) |
@@ -291,7 +291,7 @@ for the upstream browser, MCP, model, database and media projects.
 | [`rmcp-macros`](https://crates.io/crates/rmcp-macros/3.9.0) | 3.9.0 | Not declared in crate metadata | Apache-2.0 | [upstream](https://github.com/modelcontextprotocol/rust-sdk/) |
 | [`rustc-hash`](https://crates.io/crates/rustc-hash/2.1.3) | 2.1.3 | The Rust Project Developers | Apache-2.0 OR MIT | [upstream](https://github.com/rust-lang/rustc-hash) |
 | [`rustc_version`](https://crates.io/crates/rustc_version/0.4.1) | 0.4.1 | Not declared in crate metadata | MIT OR Apache-2.0 | [upstream](https://github.com/djc/rustc-version-rs) |
-| [`rustix`](https://crates.io/crates/rustix/1.1.5) | 1.1.5 | Dan Gohman, Jakub Konka | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT | [upstream](https://github.com/bytecodealliance/rustix) |
+| [`rustix`](https://crates.io/crates/rustix/1.1.6) | 1.1.6 | Dan Gohman, Jakub Konka | Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT | [upstream](https://github.com/bytecodealliance/rustix) |
 | [`rustls`](https://crates.io/crates/rustls/0.23.46) | 0.23.46 | Not declared in crate metadata | Apache-2.0 OR ISC OR MIT | [upstream](https://github.com/rustls/rustls) |
 | [`rustls-native-certs`](https://crates.io/crates/rustls-native-certs/0.8.5) | 0.8.5 | Not declared in crate metadata | Apache-2.0 OR ISC OR MIT | [upstream](https://github.com/rustls/rustls-native-certs) |
 | [`rustls-pki-types`](https://crates.io/crates/rustls-pki-types/1.15.1) | 1.15.1 | Not declared in crate metadata | MIT OR Apache-2.0 | [upstream](https://github.com/rustls/pki-types) |
@@ -383,7 +383,7 @@ for the upstream browser, MCP, model, database and media projects.
 | [`untrusted`](https://crates.io/crates/untrusted/0.9.0) | 0.9.0 | Brian Smith | ISC | [upstream](https://github.com/briansmith/untrusted) |
 | [`ureq`](https://crates.io/crates/ureq/3.4.2) | 3.4.2 | Martin Algesten, Jacob Hoffman-Andrews | MIT OR Apache-2.0 | [upstream](https://github.com/algesten/ureq) |
 | [`ureq-proto`](https://crates.io/crates/ureq-proto/0.6.5) | 0.6.5 | Martin Algesten | MIT OR Apache-2.0 | [upstream](https://github.com/algesten/ureq-proto) |
-| [`url`](https://crates.io/crates/url/2.5.8) | 2.5.8 | The rust-url developers | MIT OR Apache-2.0 | [upstream](https://github.com/servo/rust-url) |
+| [`url`](https://crates.io/crates/url/2.5.9) | 2.5.9 | The rust-url developers | MIT OR Apache-2.0 | [upstream](https://github.com/servo/rust-url) |
 | [`utf8-zero`](https://crates.io/crates/utf8-zero/0.8.1) | 0.8.1 | Simon Sapin, Martin Algesten | MIT OR Apache-2.0 | [upstream](https://github.com/algesten/utf8-zero) |
 | [`utf8_iter`](https://crates.io/crates/utf8_iter/1.0.4) | 1.0.4 | Henri Sivonen | Apache-2.0 OR MIT | [upstream](https://github.com/hsivonen/utf8_iter) |
 | [`uuid`](https://crates.io/crates/uuid/1.28.0) | 1.28.0 | Ashley Mannix, Dylan DPC, Hunar Roop Kahlon | Apache-2.0 OR MIT | [upstream](https://github.com/uuid-rs/uuid) |
